@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda | LUCHIN</title>
+    <link rel="icon" href="../Imagenes/logomuebles2.png">
+    <!-- Incluyendo CSS con Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header con logo y navegación -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <img src="../Imagenes/logomuebles2.png" alt="Logo LUCHIN">
+                    <h1>LUCHIN</h1>
+                    <p>De todo para su casa</p>
+                </a>
+            </div>            
+            <nav class="navigation">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="../nosotros.html">Nosotros</a></li>
+                    <li><a href="../proyectos.html">Proyectos</a></li>
+                    <li><a href="../contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="user-options">
+                <button id="login-register-btn">Inicia sesión / Regístrate</button>
+                <button id="cart-btn">Carrito 🛒</button>
+            </div>
+            <script>
+                // Redirige al usuario a la página de inicio de sesión o registro
+                document.getElementById('login-register-btn').addEventListener('click', function() {
+                    window.location.href = '../login_register.html';
+                });
+
+                // Redirige al usuario a la página del carrito
+                document.getElementById('cart-btn').addEventListener('click', function() {
+                    window.location.href = 'cart.html';
+                });
+            </script>
+        </div>
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="container mt-4">
+        <h2 class="text-center">Bienvenido a la Tienda LUCHIN</h2>
+        <p class="text-center mb-4">Selecciona una categoría para ver los productos.</p>
+    </div>
+
+    <!-- Lista de Productos con Bootstrap -->
+    <div class="container">
+        <h3 class="text-center">Muebles para Sala</h3>
+        <div class="row">
+            <!-- Producto 1: Silla de Sala -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/silla1sala.jpeg" alt="Silla de Sala">
+                    <div class="card-body">
+                        <h5 class="card-title">Silla de Sala</h5>
+                        <p class="card-text">Precio: $100</p>
+                        <button class="btn btn-primary" onclick="addToCart('Silla de Sala', 100)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2: Mesa de Centro -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/mesac1.jpeg" alt="Mesa de Centro">
+                    <div class="card-body">
+                        <h5 class="card-title">Mesa de Centro</h5>
+                        <p class="card-text">Precio: $150</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mesa de Centro', 150)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3: Sofa Moderno -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/sofa1.jpeg" alt="Sofa Moderno">
+                    <div class="card-body">
+                        <h5 class="card-title">Sofa Moderno</h5>
+                        <p class="card-text">Precio: $300</p>
+                        <button class="btn btn-primary" onclick="addToCart('Sofa Moderno', 300)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4: Estante de Madera -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/estanteria1.jpg" alt="Estante de Madera">
+                    <div class="card-body">
+                        <h5 class="card-title">Estante de Madera</h5>
+                        <p class="card-text">Precio: $200</p>
+                        <button class="btn btn-primary" onclick="addToCart('Estante de Madera', 200)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 5: Silla de Sala -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/silla2sala.jpeg" alt="Silla de Sala">
+                    <div class="card-body">
+                        <h5 class="card-title">Silla de Sala</h5>
+                        <p class="card-text">Precio: $100</p>
+                        <button class="btn btn-primary" onclick="addToCart('Silla de Sala', 100)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 6: Mesa de Centro -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/mesac2.jpg" alt="Mesa de Centro">
+                    <div class="card-body">
+                        <h5 class="card-title">Mesa de Centro</h5>
+                        <p class="card-text">Precio: $150</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mesa de Centro', 150)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 7: Sofa Moderno -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/sofa2.jpeg" alt="Sofa Moderno">
+                    <div class="card-body">
+                        <h5 class="card-title">Sofa Moderno</h5>
+                        <p class="card-text">Precio: $300</p>
+                        <button class="btn btn-primary" onclick="addToCart('Sofa Moderno', 300)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 8: Estante de Madera -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/estanteria2.jpg" alt="Estante de Madera">
+                    <div class="card-body">
+                        <h5 class="card-title">Estante de Madera</h5>
+                        <p class="card-text">Precio: $200</p>
+                        <button class="btn btn-primary" onclick="addToCart('Estante de Madera', 200)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 9: Silla de Sala -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/silla3sala.jpg" alt="Silla de Sala">
+                    <div class="card-body">
+                        <h5 class="card-title">Silla de Sala</h5>
+                        <p class="card-text">Precio: $100</p>
+                        <button class="btn btn-primary" onclick="addToCart('Silla de Sala', 100)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 10: Mesa de Centro -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/mesac3.jpg" alt="Mesa de Centro">
+                    <div class="card-body">
+                        <h5 class="card-title">Mesa de Centro</h5>
+                        <p class="card-text">Precio: $150</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mesa de Centro', 150)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="text-center">Muebles para Dormitorios</h3>
+        <div class="row">
+            <!-- Producto 1: Cama King Size -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/camking1.jpeg" alt="Cama King Size">
+                    <div class="card-body">
+                        <h5 class="card-title">Cama King Size</h5>
+                        <p class="card-text">Precio: $450</p>
+                        <button class="btn btn-primary" onclick="addToCart('Cama King Size', 450)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2: Mesita de Noche -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/mesnoc1.jpg" alt="Mesita de Noche">
+                    <div class="card-body">
+                        <h5 class="card-title">Mesita de Noche</h5>
+                        <p class="card-text">Precio: $120</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mesita de Noche', 120)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3: Armario -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/armario1.jpg" alt="Armario">
+                    <div class="card-body">
+                        <h5 class="card-title">Armario</h5>
+                        <p class="card-text">Precio: $350</p>
+                        <button class="btn btn-primary" onclick="addToCart('Armario', 350)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4: Colchón de Espuma -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/colchon1.jpeg" alt="Colchón">
+                    <div class="card-body">
+                        <h5 class="card-title">Colchón de Espuma</h5>
+                        <p class="card-text">Precio: $200</p>
+                        <button class="btn btn-primary" onclick="addToCart('Colchón de Espuma', 200)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 5: Cama King Size -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/camking2.jpg" alt="Cama King Size">
+                    <div class="card-body">
+                        <h5 class="card-title">Cama King Size</h5>
+                        <p class="card-text">Precio: $450</p>
+                        <button class="btn btn-primary" onclick="addToCart('Cama King Size', 450)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 6: Mesita de Noche -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/mesnoc2.jpeg" alt="Mesita de Noche">
+                    <div class="card-body">
+                        <h5 class="card-title">Mesita de Noche</h5>
+                        <p class="card-text">Precio: $120</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mesita de Noche', 120)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 7: Armario -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/armario2.jpg" alt="Armario">
+                    <div class="card-body">
+                        <h5 class="card-title">Armario</h5>
+                        <p class="card-text">Precio: $350</p>
+                        <button class="btn btn-primary" onclick="addToCart('Armario', 350)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 8: Colchón de Espuma -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/colchon2.jpg" alt="Colchón">
+                    <div class="card-body">
+                        <h5 class="card-title">Colchón de Espuma</h5>
+                        <p class="card-text">Precio: $200</p>
+                        <button class="btn btn-primary" onclick="addToCart('Colchón de Espuma', 200)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 9: Cama King Size -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/camking3.jpg" alt="Cama King Size">
+                    <div class="card-body">
+                        <h5 class="card-title">Cama King Size</h5>
+                        <p class="card-text">Precio: $450</p>
+                        <button class="btn btn-primary" onclick="addToCart('Cama King Size', 450)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 10: Mesita de Noche -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/mesnoc3.jpg" alt="Mesita de Noche">
+                    <div class="card-body">
+                        <h5 class="card-title">Mesita de Noche</h5>
+                        <p class="card-text">Precio: $120</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mesita de Noche', 120)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <h3 class="text-center">Muebles para Comedores</h3>
+        <div class="row">
+            <!-- Producto 1: Mesa de Comedor -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/mesacom1.jpg" alt="Mesa de Comedor">
+                    <div class="card-body">
+                        <h5 class="card-title">Mesa de Comedor</h5>
+                        <p class="card-text">Precio: $250</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mesa de Comedor', 250)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2: Silla de Comedor -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/silla1com.jpg" alt="Silla de Comedor">
+                    <div class="card-body">
+                        <h5 class="card-title">Silla de Comedor</h5>
+                        <p class="card-text">Precio: $75</p>
+                        <button class="btn btn-primary" onclick="addToCart('Silla de Comedor', 75)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3: Mesa Extensible -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/mesa1com.jpg" alt="Mesa Extensible">
+                    <div class="card-body">
+                        <h5 class="card-title">Mesa Extensible</h5>
+                        <p class="card-text">Precio: $300</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mesa Extensible', 300)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4: Silla Padded -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/silla1padd.jpg" alt="Silla Padded">
+                    <div class="card-body">
+                        <h5 class="card-title">Silla Padded</h5>
+                        <p class="card-text">Precio: $85</p>
+                        <button class="btn btn-primary" onclick="addToCart('Silla Padded', 85)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 5: Mesa de Comedor -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/mesa1com1.jpeg" alt="Mesa de Comedor">
+                    <div class="card-body">
+                        <h5 class="card-title">Mesa de Comedor</h5>
+                        <p class="card-text">Precio: $250</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mesa de Comedor', 250)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 6: Silla de Comedor -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/silla2com.jpg" alt="Silla de Comedor">
+                    <div class="card-body">
+                        <h5 class="card-title">Silla de Comedor</h5>
+                        <p class="card-text">Precio: $75</p>
+                        <button class="btn btn-primary" onclick="addToCart('Silla de Comedor', 75)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 7: Mesa Extensible -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/mesa2com.jpeg" alt="Mesa Extensible">
+                    <div class="card-body">
+                        <h5 class="card-title">Mesa Extensible</h5>
+                        <p class="card-text">Precio: $300</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mesa Extensible', 300)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 8: Silla Padded -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/silla2padd.jpeg" alt="Silla Padded">
+                    <div class="card-body">
+                        <h5 class="card-title">Silla Padded</h5>
+                        <p class="card-text">Precio: $85</p>
+                        <button class="btn btn-primary" onclick="addToCart('Silla Padded', 85)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 9: Mesa de Comedor -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/mesa1com2.jpg" alt="Mesa de Comedor">
+                    <div class="card-body">
+                        <h5 class="card-title">Mesa de Comedor</h5>
+                        <p class="card-text">Precio: $250</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mesa de Comedor', 250)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 10: Silla de Comedor -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/silla3com.jpg" alt="Silla de Comedor">
+                    <div class="card-body">
+                        <h5 class="card-title">Silla de Comedor</h5>
+                        <p class="card-text">Precio: $75</p>
+                        <button class="btn btn-primary" onclick="addToCart('Silla de Comedor', 75)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <h3 class="text-center">Alfombras</h3>
+        <div class="row">
+            <!-- Producto 1: Alfombra Moderna -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/alfomod1.jpeg" alt="Alfombra Moderna">
+                    <div class="card-body">
+                        <h5 class="card-title">Alfombra Moderna</h5>
+                        <p class="card-text">Precio: $120</p>
+                        <button class="btn btn-primary" onclick="addToCart('Alfombra Moderna', 120)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2: Alfombra Clásica -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/alfocla1.jpg" alt="Alfombra Clásica">
+                    <div class="card-body">
+                        <h5 class="card-title">Alfombra Clásica</h5>
+                        <p class="card-text">Precio: $150</p>
+                        <button class="btn btn-primary" onclick="addToCart('Alfombra Clásica', 150)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3: Alfombra de Área -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/alfoarea1.jpeg" alt="Alfombra de Área">
+                    <div class="card-body">
+                        <h5 class="card-title">Alfombra de Área</h5>
+                        <p class="card-text">Precio: $90</p>
+                        <button class="btn btn-primary" onclick="addToCart('Alfombra de Área', 90)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4: Alfombra Infantil -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/alfoinfa1.jpg" alt="Alfombra Infantil">
+                    <div class="card-body">
+                        <h5 class="card-title">Alfombra Infantil</h5>
+                        <p class="card-text">Precio: $70</p>
+                        <button class="btn btn-primary" onclick="addToCart('Alfombra Infantil', 70)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 5: Alfombra Moderna -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/alfomod2.jpg" alt="Alfombra Moderna">
+                    <div class="card-body">
+                        <h5 class="card-title">Alfombra Moderna</h5>
+                        <p class="card-text">Precio: $120</p>
+                        <button class="btn btn-primary" onclick="addToCart('Alfombra Moderna', 120)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 6: Alfombra Clásica -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/alfocla2.jpg" alt="Alfombra Clásica">
+                    <div class="card-body">
+                        <h5 class="card-title">Alfombra Clásica</h5>
+                        <p class="card-text">Precio: $150</p>
+                        <button class="btn btn-primary" onclick="addToCart('Alfombra Clásica', 150)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 7: Alfombra de Área -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/alfoarea2.jpeg" alt="Alfombra de Área">
+                    <div class="card-body">
+                        <h5 class="card-title">Alfombra de Área</h5>
+                        <p class="card-text">Precio: $90</p>
+                        <button class="btn btn-primary" onclick="addToCart('Alfombra de Área', 90)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 8: Alfombra Infantil -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/alfoinfa2.jpg" alt="Alfombra Infantil">
+                    <div class="card-body">
+                        <h5 class="card-title">Alfombra Infantil</h5>
+                        <p class="card-text">Precio: $70</p>
+                        <button class="btn btn-primary" onclick="addToCart('Alfombra Infantil', 70)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 9: Alfombra Moderna -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/alfomod3.jpg" alt="Alfombra Moderna">
+                    <div class="card-body">
+                        <h5 class="card-title">Alfombra Moderna</h5>
+                        <p class="card-text">Precio: $120</p>
+                        <button class="btn btn-primary" onclick="addToCart('Alfombra Moderna', 120)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 10: Alfombra Clásica -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/alfocla3.jpeg" alt="Alfombra Clásica">
+                    <div class="card-body">
+                        <h5 class="card-title">Alfombra Clásica</h5>
+                        <p class="card-text">Precio: $150</p>
+                        <button class="btn btn-primary" onclick="addToCart('Alfombra Clásica', 150)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <h3 class="text-center">Decoraciones</h3>
+        <div class="row">
+            <!-- Producto 1: Cuadro Decorativo -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/decocuadro1.jpg" alt="Cuadro Decorativo">
+                    <div class="card-body">
+                        <h5 class="card-title">Cuadro Decorativo</h5>
+                        <p class="card-text">Precio: $80</p>
+                        <button class="btn btn-primary" onclick="addToCart('Cuadro Decorativo', 80)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2: Lámpara de Mesa -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/lamdeco1.jpeg" alt="Lámpara de Mesa">
+                    <div class="card-body">
+                        <h5 class="card-title">Lámpara de Mesa</h5>
+                        <p class="card-text">Precio: $60</p>
+                        <button class="btn btn-primary" onclick="addToCart('Lámpara de Mesa', 60)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3: Vaso Decorativo -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/vasodeco1.jpg" alt="Vaso Decorativo">
+                    <div class="card-body">
+                        <h5 class="card-title">Vaso Decorativo</h5>
+                        <p class="card-text">Precio: $25</p>
+                        <button class="btn btn-primary" onclick="addToCart('Vaso Decorativo', 25)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4: Almohada Decorativa -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/almodeco1.jpg" alt="Almohada Decorativa">
+                    <div class="card-body">
+                        <h5 class="card-title">Almohada Decorativa</h5>
+                        <p class="card-text">Precio: $40</p>
+                        <button class="btn btn-primary" onclick="addToCart('Almohada Decorativa', 40)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 5: Cuadro Decorativo -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/decocuadro2.jpeg" alt="Cuadro Decorativo">
+                    <div class="card-body">
+                        <h5 class="card-title">Cuadro Decorativo</h5>
+                        <p class="card-text">Precio: $80</p>
+                        <button class="btn btn-primary" onclick="addToCart('Cuadro Decorativo', 80)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 6: Lámpara de Mesa -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/lamdeco2.jpg" alt="Lámpara de Mesa">
+                    <div class="card-body">
+                        <h5 class="card-title">Lámpara de Mesa</h5>
+                        <p class="card-text">Precio: $60</p>
+                        <button class="btn btn-primary" onclick="addToCart('Lámpara de Mesa', 60)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 7: Vaso Decorativo -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/vasodeco2.jpg" alt="Vaso Decorativo">
+                    <div class="card-body">
+                        <h5 class="card-title">Vaso Decorativo</h5>
+                        <p class="card-text">Precio: $25</p>
+                        <button class="btn btn-primary" onclick="addToCart('Vaso Decorativo', 25)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 8: Almohada Decorativa -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/almodeco2.jpg" alt="Almohada Decorativa">
+                    <div class="card-body">
+                        <h5 class="card-title">Almohada Decorativa</h5>
+                        <p class="card-text">Precio: $40</p>
+                        <button class="btn btn-primary" onclick="addToCart('Almohada Decorativa', 40)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 9: Cuadro Decorativo -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/decocuadro3.jpg" alt="Cuadro Decorativo">
+                    <div class="card-body">
+                        <h5 class="card-title">Cuadro Decorativo</h5>
+                        <p class="card-text">Precio: $80</p>
+                        <button class="btn btn-primary" onclick="addToCart('Cuadro Decorativo', 80)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 10: Lámpara de Mesa -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="../Imagenes/lamdeco3.jpg" alt="Lámpara de Mesa">
+                    <div class="card-body">
+                        <h5 class="card-title">Lámpara de Mesa</h5>
+                        <p class="card-text">Precio: $60</p>
+                        <button class="btn btn-primary" onclick="addToCart('Lámpara de Mesa', 60)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Función para agregar productos al carrito
+        function addToCart(name, price) {
+            // Obtener carrito guardado en el localStorage (si existe)
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Agregar el producto al carrito
+            cart.push({ name, price });
+
+            // Guardar carrito actualizado en el localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            alert(name + " agregado al carrito");
+        }
+    </script>
+
+    <!-- Incluyendo librerías necesarias -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>   
+    <footer>
+        <p>&copy; 2024 Muebles LUCHIN. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    margin-top: 150px; /* Ajusta según la altura del header */
+
+}
+
+/* Header */
+.header {
+    background-color: #2c3e50;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    position: fixed; /* Fija el header */
+    top: 0; /* Lo mantiene en la parte superior */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    z-index: 1000; /* Lo coloca por encima de otros elementos */
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+
+.header .logo {
+    display: flex;
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+}
+
+.header .logo img {
+    height: 60px; /* Ajusta la altura de la imagen */
+    width: auto;
+    margin-right: 15px; /* Espacio entre la imagen y el texto */
+    transition: transform 0.3s ease; /* Animación para la imagen */
+}
+
+.header .logo img:hover {
+    transform: scale(1.1); /* Efecto de aumento al pasar el mouse */
+}
+
+.header .logo h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #ecf0f1;
+    font-weight: bold;
+}
+
+.header .logo p {
+    margin: 0;
+    font-size: 14px;
+    color: #bdc3c7;
+}
+
+/* Navegación */
+.header .navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header .navigation ul li {
+    margin: 0 15px;
+}
+
+.header .navigation ul li a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 16px;
+    padding: 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.header .navigation ul li a:hover {
+    color: #1abc9c;
+    background-color: #34495e;
+    border-radius: 5px;
+}
+
+/* Opciones de usuario */
+.header .user-options button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.header .user-options button:hover {
+    background-color: #16a085;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+    }
+
+    .header .navigation ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header .user-options {
+        margin-top: 10px;
+    }
+}
+
+/* Banner principal */
+.main-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0;
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-left: 50px;
+}
+
+.main-banner .banner-content h2 {
+    font-size: 36px;
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+.main-banner .banner-content p {
+    font-size: 20px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.main-banner .cta-button {
+    background-color: #1abc9c;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.main-banner .cta-button:hover {
+    background-color: #16a085;
+}
+
+.main-banner .banner-image img {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 75%;
+}
+/* Footer */
+footer {
+    background-color: #34495e;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+</style>
+    

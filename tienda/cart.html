@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .table thead {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        .btn-custom {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #1a252f;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2c3e50;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Carrito de Compras</h1>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Carrito de Compras</h2>
+            <table class="table table-bordered" id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-body">
+                    <!-- Los productos del carrito se agregarán aquí -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td id="cart-total">$0.00</td>
+                        <td><button class="btn btn-warning" onclick="clearCart()">Vaciar Carrito</button></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <button class="btn btn-custom mt-3" onclick="generatePDF()">Generar PDF</button>
+        </div>
+    </main>
+
+    <footer>
+        <a href="tienda.html" class="btn btn-light">Volver a la tienda</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script>
+        // Obtener carrito guardado en el localStorage (si existe)
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Función para actualizar el carrito en la interfaz
+        function updateCart() {
+            const cartBody = document.getElementById('cart-body');
+            const cartTotal = document.getElementById('cart-total');
+            cartBody.innerHTML = '';
+
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td><button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Eliminar</button></td>
+                `;
+                cartBody.appendChild(row);
+            });
+
+            cartTotal.textContent = `$${total.toFixed(2)}`;
+        }
+
+        // Función para eliminar productos del carrito
+        function removeFromCart(index) {
+            cart.splice(index, 1); // Eliminar producto
+            localStorage.setItem('cart', JSON.stringify(cart)); // Actualizar localStorage
+            updateCart();
+        }
+
+        // Función para vaciar el carrito
+        function clearCart() {
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart)); // Limpiar localStorage
+            updateCart();
+        }
+
+        // Función para generar un PDF del carrito
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.text('Factura de Compra', 105, 20, null, null, 'center');
+
+            let y = 30;
+            let total = 0;
+            cart.forEach(item => {
+                doc.text(`${item.name} - $${item.price.toFixed(2)}`, 20, y);
+                total += item.price;
+                y += 10;
+            });
+
+            doc.text(`Total: $${total.toFixed(2)}`, 20, y);
+            doc.save('factura_compra.pdf');
+        }
+
+        // Actualizar carrito al cargar la página
+        updateCart();
+    </script>
+</body>
+</html>
